@@ -13,6 +13,7 @@ Console.WriteLine(tens);
 }
 
 
+// задача 13
 
 void Zadacha13()
 {
@@ -32,6 +33,8 @@ if (num < 100)
     Console.WriteLine(num % 10);
 }
 }
+
+// задача 15
 
 void Zadacha15()
 {
