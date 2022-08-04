@@ -1,65 +1,69 @@
-﻿
-// задача 10
-void Zadacha10()
+﻿// задача 19
+void Zadacha19()
 {
-Console.Write("Введите трехзначное число:");
+Console.Write("Введите пятизначное число:");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int ones = num % 10;
-int tens = (num / 10) % 10;
-int huns = num / 100;
 
-Console.WriteLine(tens);
+
+if (num > 9999 && num < 1000000 )
+{
+int e = num % 10;
+int d = (num / 10) % 10;
+int c = (num / 100) % 10;
+int b = (num / 1000) % 10;
+int a = num / 10000;
+if (a == e && b == d) Console.WriteLine("число явлеятся палиндромом");
+
+else Console.WriteLine("число не явлеятся палиндромом");
+}
+else
+{
+Console.WriteLine("число введено неверно");
 }
 
+}
 
-// задача 13
+//Zadacha19();
 
-void Zadacha13()
+
+// задача 21
+
+void Zadacha21()
 {
-    //Задача 13
+int a_x = 5;
+int a_y = 6;
+int a_z = 3;
+int b_x = 1;
+int b_y = 4;
+int b_z = 2;
+double dist = Math.Sqrt( Math.Pow(a_x - b_x, 2) + Math.Pow(a_y - b_y, 2) + Math.Pow(a_z - b_z, 2));
+
+Console.WriteLine(dist);
+}
+//Zadacha21();
+
+
+
+
+
+// задача 23
+
+void Zadacha23()
+{
 Console.Write("Введите число:");
-int num = Convert.ToInt32(Console.ReadLine());
-if (num < 100)
+int n = Convert.ToInt32(Console.ReadLine());
+double a = 1;
+double cub;
+while (a <= n)
 {
-    Console.WriteLine("нет третьего числа");
-}
-    else
-{
-    while (num > 999)
-{
-    num /= 10;
-}
-    Console.WriteLine(num % 10);
+cub = Math.Pow(a, 3);
+
+Console.WriteLine(cub);
+a++;
+
 }
 }
 
-// задача 15
 
-void Zadacha15()
-{
-Console.Write("Введите номер дня недели:");
-int num = Convert.ToInt32(Console.ReadLine());
- if (num == 6 || num == 7)
-    Console.WriteLine("этот день выходной");
-else 
-{
-    if (num >=1 && num <= 5)
- Console.WriteLine("это будний день");
- else 
-    if (num <= 0 || num > 7)
-Console.WriteLine("вводные данные не верны");
-}
-}
-
-//Zadacha10();
-//Zadacha13();
-//Zadacha15();
-
-
-
-
-
-
-
-
+//Zadacha23();
