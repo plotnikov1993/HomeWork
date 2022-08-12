@@ -1,69 +1,79 @@
-﻿// задача 19
-void Zadacha19()
+﻿
+// задача 25
+
+void Zadacha25()
 {
-Console.Write("Введите пятизначное число:");
-int num = Convert.ToInt32(Console.ReadLine());
-
-
-
-if (num > 9999 && num < 1000000 )
-{
-int e = num % 10;
-int d = (num / 10) % 10;
-int c = (num / 100) % 10;
-int b = (num / 1000) % 10;
-int a = num / 10000;
-if (a == e && b == d) Console.WriteLine("число явлеятся палиндромом");
-
-else Console.WriteLine("число не явлеятся палиндромом");
-}
-else
-{
-Console.WriteLine("число введено неверно");
-}
-
-}
-
-//Zadacha19();
-
-
-// задача 21
-
-void Zadacha21()
-{
-int a_x = 5;
-int a_y = 6;
-int a_z = 3;
-int b_x = 1;
-int b_y = 4;
-int b_z = 2;
-double dist = Math.Sqrt( Math.Pow(a_x - b_x, 2) + Math.Pow(a_y - b_y, 2) + Math.Pow(a_z - b_z, 2));
-
-Console.WriteLine(dist);
-}
-//Zadacha21();
-
-
-
-
-
-// задача 23
-
-void Zadacha23()
-{
-Console.Write("Введите число:");
+Console.Write("Введите число N:");
 int n = Convert.ToInt32(Console.ReadLine());
-double a = 1;
+Console.Write("Введите число A:");
+int a = Convert.ToInt32(Console.ReadLine());
+
 double cub;
-while (a <= n)
-{
-cub = Math.Pow(a, 3);
+
+cub = Math.Pow(n, a);
 
 Console.WriteLine(cub);
-a++;
 
 }
+
+
+void Zadacha27()
+
+{
+Console.Write("Введите число:");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int sum = 0;
+
+while (num > 0)
+{
+sum +=num%10;
+num /=10;
+}
+Console.WriteLine(" сумма цифр равна " + sum);
+
+}
+Console.WriteLine();
+
+
+
+void Zadacha29()
+{
+int size = 8;
+int [] array = new int [size];
+
+Random random = new Random();
+
+for (int i =0; i < array.Length; i++)
+{
+array[i] = random.Next (-10, 11);
+}
+for (int i =0; i < array.Length; i++)
+{
+Console.Write(array[i] + " ");
+}
+Console.WriteLine();
+for (int i = array.Length - 1; i > 0; i--)
+{
+    for (int a =0; a < i; a++)
+{
+    if (Math.Abs(array[a]) > Math.Abs(array[a+1]))
+    {
+
+    int ord = array[a];
+    array[a] = array[a+1];
+    array[a+1] = ord;
+    }
+}
+}
+for (int i =0; i < array.Length; i++)
+{
+Console.Write(array[i] + " ");
+}
+Console.WriteLine();
+
 }
 
-
-//Zadacha23();
+//Zadacha25();
+//Zadacha27();
+Zadacha29();
