@@ -1,79 +1,125 @@
 ﻿
-// задача 25
-
-void Zadacha25()
-{
-Console.Write("Введите число N:");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите число A:");
-int a = Convert.ToInt32(Console.ReadLine());
-
-double cub;
-
-cub = Math.Pow(n, a);
-
-Console.WriteLine(cub);
-
-}
-
-
-void Zadacha27()
-
-{
-Console.Write("Введите число:");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int sum = 0;
-
-while (num > 0)
-{
-sum +=num%10;
-num /=10;
-}
-Console.WriteLine(" сумма цифр равна " + sum);
-
-}
-Console.WriteLine();
-
-
-
-void Zadacha29()
+void Zadacha34()
 {
 int size = 8;
 int [] array = new int [size];
+Random(array);
+Even(array);
+}
 
+
+void Random(int [] array)
+{
 Random random = new Random();
 
-for (int i =0; i < array.Length; i++)
+for (int i = 0; i < array.Length; i++)
 {
-array[i] = random.Next (-10, 11);
+    array[i] = random.Next (100, 1000);
+    
+    Console.Write(array[i] + " ");
 }
-for (int i =0; i < array.Length; i++)
-{
-Console.Write(array[i] + " ");
+    Console.WriteLine();
 }
-Console.WriteLine();
-for (int i = array.Length - 1; i > 0; i--)
-{
-    for (int a =0; a < i; a++)
-{
-    if (Math.Abs(array[a]) > Math.Abs(array[a+1]))
-    {
 
-    int ord = array[a];
-    array[a] = array[a+1];
-    array[a+1] = ord;
+void Even(int [] array)
+{
+    int n = 0;
+    for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] % 2 == 0)
+    {
+      n++ ;
     }
 }
+Console.WriteLine("количество четных чисел в массиве: " + n);
 }
-for (int i =0; i < array.Length; i++)
+
+
+void Zadacha36()
 {
-Console.Write(array[i] + " ");
+int size = 8;
+int [] array = new int [size];
+Random2(array);
+Sum(array);
 }
-Console.WriteLine();
+
+void Random2(int [] array)
+{
+Random random = new Random();
+
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = random.Next (0, 21);
+    
+    Console.Write(array[i] + " ");
+}
+    Console.WriteLine();
+}
+
+void Sum(int [] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] % 2 == 1)
+    {
+      sum += array[i] ;
+    
+    }
+}
+Console.WriteLine(sum);
 
 }
 
-//Zadacha25();
-//Zadacha27();
-Zadacha29();
+
+
+void Zadacha38()
+{
+int size = 5;
+double [] array = new double[size];
+Random3(array);
+//Dif(array);
+MaxMin(array);
+
+}
+
+void Random3(double [] array)
+{
+Random random = new Random();
+
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = random.Next(-50, 50) + random.NextDouble();
+    
+    Console.Write(array[i] + " ");
+}
+    Console.WriteLine();
+}
+void MaxMin(double [] array)
+{
+double max = -50;
+for (int i = 0; i < array.Length; i++)
+{
+    if(array[i] > max)
+    {
+    max = array[i];
+    }
+}
+double min = max;
+for (int i = 0; i < array.Length; i++)
+{
+    if(array[i] < min)
+    {
+    min = array[i];
+    }
+}
+Console.WriteLine(max);
+Console.WriteLine(min);
+Console.WriteLine(Math.Abs(max) - Math.Abs(min));
+}
+
+
+
+//Zadacha34();
+//Zadacha36();
+Zadacha38();
