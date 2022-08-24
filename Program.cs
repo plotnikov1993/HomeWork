@@ -1,125 +1,39 @@
-﻿
-void Zadacha34()
+﻿void Zadacha41()
 {
-int size = 8;
-int [] array = new int [size];
-Random(array);
-Even(array);
-}
+Console.Write("Сколько чисел будет введено?");
+int m = Convert.ToInt32(Console.ReadLine());
+int count = 0;
 
-
-void Random(int [] array)
+for (int i = 0; i < m; i++)
 {
-Random random = new Random();
-
-for (int i = 0; i < array.Length; i++)
-{
-    array[i] = random.Next (100, 1000);
-    
-    Console.Write(array[i] + " ");
-}
+    Console.Write("Введите число: ");
+    int n = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
+    if (n > 0) count++;
+}
+Console.WriteLine($"Было введено {count} числа(чисел) больше нуля");
 }
 
-void Even(int [] array)
+
+void Zadacha43()
 {
-    int n = 0;
-    for (int i = 0; i < array.Length; i++)
+int k1 = 8;
+int b1 = 2;
+int k2 = 4;
+int b2 = 10;
+
+if (k1 == k2)
 {
-    if (array[i] % 2 == 0)
-    {
-      n++ ;
-    }
+    Console.WriteLine("нет точки");
 }
-Console.WriteLine("количество четных чисел в массиве: " + n);
-}
-
-
-void Zadacha36()
+else
 {
-int size = 8;
-int [] array = new int [size];
-Random2(array);
-Sum(array);
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    double y2 = k2 * x + b2;
+    Console.WriteLine($"координаты точки пересечения A({x}, {y})");
+    Console.WriteLine($"координаты точки пересечения A({x}, {y2})");
 }
-
-void Random2(int [] array)
-{
-Random random = new Random();
-
-for (int i = 0; i < array.Length; i++)
-{
-    array[i] = random.Next (0, 21);
-    
-    Console.Write(array[i] + " ");
 }
-    Console.WriteLine();
-}
-
-void Sum(int [] array)
-{
-    int sum = 0;
-    for (int i = 0; i < array.Length; i++)
-{
-    if (array[i] % 2 == 1)
-    {
-      sum += array[i] ;
-    
-    }
-}
-Console.WriteLine(sum);
-
-}
-
-
-
-void Zadacha38()
-{
-int size = 5;
-double [] array = new double[size];
-Random3(array);
-//Dif(array);
-MaxMin(array);
-
-}
-
-void Random3(double [] array)
-{
-Random random = new Random();
-
-for (int i = 0; i < array.Length; i++)
-{
-    array[i] = random.Next(-50, 50) + random.NextDouble();
-    
-    Console.Write(array[i] + " ");
-}
-    Console.WriteLine();
-}
-void MaxMin(double [] array)
-{
-double max = -50;
-for (int i = 0; i < array.Length; i++)
-{
-    if(array[i] > max)
-    {
-    max = array[i];
-    }
-}
-double min = max;
-for (int i = 0; i < array.Length; i++)
-{
-    if(array[i] < min)
-    {
-    min = array[i];
-    }
-}
-Console.WriteLine(max);
-Console.WriteLine(min);
-Console.WriteLine(Math.Abs(max) - Math.Abs(min));
-}
-
-
-
-//Zadacha34();
-//Zadacha36();
-Zadacha38();
+//Zadacha41();
+Zadacha43();
